@@ -39,7 +39,7 @@ router.post("/", ensureAdmin, async function (req, res, next) {
     return next(err);
   }
 });
-// *************************************************************!!!!!!
+
 /** GET /  =>
  *   { companies: [ { handle, name, description, numEmployees, logoUrl }, ...] }
  *
@@ -96,7 +96,7 @@ router.get("/:handle", async function (req, res, next) {
  *
  * Returns { handle, name, description, numEmployees, logo_url }
  *
- * Authorization required: login
+ * Authorization required: admin
  */
 
 router.patch("/:handle", ensureAdmin, async function (req, res, next) {
@@ -114,10 +114,6 @@ router.patch("/:handle", ensureAdmin, async function (req, res, next) {
   }
 });
 
-
-
-
-// *******************************************************************!!!!!
 /** DELETE /[handle]  =>  { deleted: handle }
  *
  * Authorization: admin
